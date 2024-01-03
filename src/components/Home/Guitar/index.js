@@ -1,10 +1,10 @@
 import './index.scss'
-import GuitImage from '../../../assets/images/guitar.jpeg'
+import GuitarImage from '../../../assets/images/guitar.png'
 
 const Guitar = () => {
   return (
-    <div className='logo-container'>
-      <img className="solid-logo" src={GuitImage} alt="guitar"/>
+    <div className='guitar-container'>
+      <img className="guitar-logo" src={GuitarImage} alt="guitar"/>
     </div>
   )
 }

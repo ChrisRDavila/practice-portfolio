@@ -5,6 +5,7 @@ import AnimatedLetters from '../AnimatedLetters';
 import { useEffect, useState } from 'react'
 import Guitar from './Guitar';
 
+
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const nameArray = ['o','s','s', ' ', 'D', 'a', 'v', 'i', 'l', 'a']
@@ -42,11 +43,11 @@ const Home = () => {
           idx={26} />
           </h1>
           <h2>Full-stack developer / Student / Musician</h2>
-          <Link to='/contact' className='flat-button'>CONTACT ME</Link>
+          <Link to='/contact' className='flat-button'>
+            CONTACT ME
+            </Link>
         </div>
-        <div className='picture'>
-          <Guitar />
-        </div>
+        <Guitar/>
       </div>
   );
 }

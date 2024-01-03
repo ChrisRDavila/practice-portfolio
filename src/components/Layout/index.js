@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-  <div className='App'> 
+  <div className='App'>
   <SideBar />
   <div className='page'>
     <span className='tags top-tags'>&lt;body&gt;</span>
@@ -16,7 +16,7 @@ const Layout = () => {
       <br />
       <span className='bottom-tag-html'>&lt;/html&gt;</span>
       </span>
-  </div>
+    </div>
   </div>
   )
 }
