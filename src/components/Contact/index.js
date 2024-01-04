@@ -13,22 +13,25 @@ const Contact = () => {
     }, 4000)
   }, [])
 
-  const sendEmail = (e) => {
-    e.preventDefault()
 
-    emailjs
-      .sendForm('gmail', process.env.TEMPLATE_KEY, form.current, process.env.PRIVATE_KEY)
-      .then(
-        () => {
-          alert('Message successfully sent!')
-          window.location.reload(false)
-        },
-        () => {
-          alert('Failed to send the message, please try again')
-        }
-      )
-  }
+  //works like this.^ does not work with dotenv variables below for some reason,
+  // want to hide my secret keys, cant update git until works properly
 
+// const sendEmail = (e) => {
+//     e.preventDefault()
+
+//     emailjs
+//       .sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_KEY, form.current, process.env.PUBLIC_KEY)
+//       .then(
+//         () => {
+//           alert('Message successfully sent!')
+//           window.location.reload(false)
+//         },
+//         () => {
+//           alert('Failed to send the message, please try again')
+//         }
+//       )
+//   }
 
   return (
     <>
