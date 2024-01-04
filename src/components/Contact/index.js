@@ -27,11 +27,45 @@ const Contact = () => {
             I am interested in sharing and meeting fellow developers in the community. Any oppurtunity to work alongside, receive critiques or see a project someones excited about are welcome investments of my time.  If you have any requests or questions, or want to work on a project please contact via the following methods
           </p>
           <div className='contact-form'>
-            <ul>
-              <li className='half'>
-                <input type='text' name='name' placeholder='Name' required />
-              </li>
-            </ul>
+            <form>
+              <ul>
+                <li className='half'>
+                  <input 
+                  type='text' 
+                  name='name' 
+                  placeholder='Name' 
+                  required />
+                  </li>
+                  <li className='half'>
+                  <input 
+                  type='email' 
+                  name='email' 
+                  placeholder='email'
+                  required />
+                </li>
+                <li>
+                  <input 
+                  type='text' 
+                  name='subject' 
+                  placeholder='subject' 
+                  required />
+                </li>
+                <li>
+                  <input 
+                  type='text-area' 
+                  name='message' 
+                  placeholder='message' 
+                  required />
+                </li>
+                <li>
+                  <input 
+                  type='submit' 
+                  className='flat-button' 
+                  value='send' 
+                  required />
+                </li>
+              </ul>
+            </form>
           </div>
         </div>
       </div>
