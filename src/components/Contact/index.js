@@ -14,24 +14,24 @@ const Contact = () => {
   }, [])
 
 
-  //works like this.^ does not work with dotenv variables below for some reason,
+  // works like this.^ does not work with dotenv variables below for some reason,
   // want to hide my secret keys, cant update git until works properly
 
-// const sendEmail = (e) => {
-//     e.preventDefault()
+const sendEmail = (e) => {
+    e.preventDefault()
 
-//     emailjs
-//       .sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_KEY, form.current, process.env.PUBLIC_KEY)
-//       .then(
-//         () => {
-//           alert('Message successfully sent!')
-//           window.location.reload(false)
-//         },
-//         () => {
-//           alert('Failed to send the message, please try again')
-//         }
-//       )
-//   }
+    emailjs
+      .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_KEY, form.current, process.env.REACT_APP_PUBLIC_KEY)
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again')
+        }
+      )
+  }
 
   return (
     <>
