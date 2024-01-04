@@ -1,15 +1,33 @@
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const form = useRef()
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 4000)
   }, [])
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm('gmail', process.env.TEMPLATE_KEY, form.current, process.env.PRIVATE_KEY)
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again')
+        }
+      )
+  }
 
 
   return (
@@ -25,44 +43,35 @@ const Contact = () => {
           </h1>
           <p>
             I am interested in sharing and meeting fellow developers in the community. Any oppurtunity to work alongside, receive critiques or see a project someones excited about are welcome investments of my time.  If you have any requests or questions, or want to work on a project please contact via the following methods
-          </p>
-          <div className='contact-form'>
-            <form>
+            </p>
+          <div className="contact-form">
+            <form ref={form} onSubmit={sendEmail}>
               <ul>
-                <li className='half'>
-                  <input 
-                  type='text' 
-                  name='name' 
-                  placeholder='Name' 
-                  required />
-                  </li>
-                  <li className='half'>
-                  <input 
-                  type='email' 
-                  name='email' 
-                  placeholder='email'
-                  required />
+                <li className="half">
+                  <input placeholder="Name" type="text" name="name" />
+                </li>
+                <li className="half">
+                  <input
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                  />
                 </li>
                 <li>
-                  <input 
-                  type='text' 
-                  name='subject' 
-                  placeholder='subject' 
-                  required />
+                  <input
+                    placeholder="Subject"
+                    type="text"
+                    name="subject"
+                  />
                 </li>
                 <li>
-                  <input 
-                  type='text-area' 
-                  name='message' 
-                  placeholder='message' 
-                  required />
+                  <textarea
+                    placeholder="Message"
+                    name="message"
+                  ></textarea>
                 </li>
                 <li>
-                  <input 
-                  type='submit' 
-                  className='flat-button' 
-                  value='send' 
-                  required />
+                  <input type="submit" className="flat-button" value="SEND" />
                 </li>
               </ul>
             </form>
