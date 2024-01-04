@@ -1,17 +1,12 @@
 .guitar-container {
   z-index: 0;
   width: 300px;
-  opacity: 20%;
-  // height: 60px;
-  // position: absolute;
-  // top: 0;
-  // right: 15%;
   bottom: 50%;
-  // left: auto;
-  // margin: auto;
   display: flex;
 margin-left: 25%;
 float: right;
-
-
+opacity: 20%;
+// .guitar-logo {
+  //want to fadeIn to opacity of 20% from 0%
+// }
 }
